@@ -1,0 +1,36 @@
+[package]
+name = "test-celesteloader"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "ctas-wklb"
+path = "src/bin/walk.rs"
+
+[[bin]]
+name = "ctas-draw"
+path = "src/bin/draw.rs"
+
+[dependencies]
+alphabet = "0.2.2"
+anyhow = "1.0.86"
+clap = { version = "4.5.8", features = ["derive"] }
+euclid = "0.22.10"
+itertools = "0.13.0"
+peniko = { git = "https://github.com/linebender/peniko.git" }
+png = "0.17.13"
+serde = "1.0.203"
+serde_json = "1.0.117"
+tiny-skia = { git = "https://github.com/RazrFalcon/tiny-skia.git" }
+tuple = "0.5.2"
+walkdir = "2.5.0"
+
+[dependencies.celesteloader]
+git = "https://github.com/jakobhellermann/celestetools.git"
+
+[dependencies.parley]
+git = "https://github.com/linebender/parley.git"
+
+[profile.release-opt]
+inherits = "release"
+lto = true
